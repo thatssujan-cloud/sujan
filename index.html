@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sujan Paudyal | Geologist & Researcher</title>
+<meta name="description" content="Personal CV and portfolio website of Sujan Paudyal, geologist and geophysics researcher.">
+<style>
+:root{
+  --bg:#070b17; --panel:#10172a; --panel2:#151e35; --text:#eef3ff; --muted:#a8b3cc;
+  --accent:#7c5cff; --cyan:#24d9ff; --pink:#ff4fa3; --green:#39e58c; --line:#26314c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at 15% 10%,#18204b 0,transparent 28%),radial-gradient(circle at 90% 20%,#25163d 0,transparent 25%),var(--bg);
+  color:var(--text); line-height:1.65; overflow-x:hidden;
+}
+body.light{--bg:#f4f7ff;--panel:#fff;--panel2:#eef2ff;--text:#142039;--muted:#59667e;--line:#dbe2f2;background:#f4f7ff}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,11,23,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+body.light nav{background:rgba(255,255,255,.78)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--cyan)}
+.links{display:flex;gap:24px;align-items:center}.links a{color:var(--muted);font-size:.92rem}.links a:hover{color:var(--text)}
+button{border:0;cursor:pointer}
+.theme{width:42px;height:42px;border-radius:50%;background:var(--panel2);color:var(--text);font-size:1rem}
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.badge{display:inline-flex;padding:7px 12px;border:1px solid #314063;border-radius:999px;color:#b9c6e8;background:rgba(124,92,255,.08);font-size:.82rem;margin-bottom:20px}
+h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.98;letter-spacing:-5px;margin-bottom:22px}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--accent),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:670px;color:var(--muted);font-size:1.12rem}
+.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 19px;border-radius:12px;font-weight:800;background:linear-gradient(100deg,var(--accent),var(--pink));color:white;box-shadow:0 12px 30px rgba(124,92,255,.25)}
+.btn.alt{background:var(--panel);border:1px solid var(--line);box-shadow:none}
+.orbit{width:320px;height:320px;border-radius:50%;border:1px solid #34405f;display:grid;place-items:center;position:relative;animation:float 5s ease-in-out infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(36,217,255,.35)}.orbit:before{inset:28px;transform:rotate(40deg) scaleX(1.3)}.orbit:after{inset:55px;transform:rotate(-45deg) scaleX(1.5)}
+.avatar{width:190px;height:190px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--cyan));display:grid;place-items:center;font-size:4rem;font-weight:900;box-shadow:0 0 80px rgba(36,217,255,.22)}
+.float-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--pink);box-shadow:0 0 25px var(--pink)}.d1{top:20px;left:75px}.d2{right:20px;bottom:75px;background:var(--green)}
+@keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}
+section{padding:100px 0}.section-title{font-size:2.5rem;letter-spacing:-1.5px;margin-bottom:12px}.section-sub{color:var(--muted);max-width:700px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);padding:25px;border-radius:20px;transition:.3s;position:relative;overflow:hidden}
+body.light .card{background:var(--panel)}
+.card:hover{transform:translateY(-6px);border-color:#52638d;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.icon{font-size:1.7rem;margin-bottom:12px}.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:.94rem}
+.timeline{border-left:2px solid var(--line);margin-left:10px;padding-left:30px;display:grid;gap:28px}.item{position:relative}.item:before{content:"";position:absolute;left:-39px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}.date{color:var(--cyan);font-size:.82rem;font-weight:800}.item h3{margin:4px 0}.item p{color:var(--muted)}
+.skills{display:grid;gap:17px;max-width:780px}.skill{display:grid;grid-template-columns:160px 1fr;align-items:center;gap:18px}.bar{height:9px;background:var(--panel2);border-radius:99px;overflow:hidden}.fill{height:100%;width:var(--w);background:linear-gradient(90deg,var(--cyan),var(--accent),var(--pink));border-radius:99px;transform:scaleX(0);transform-origin:left;transition:1.2s}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}.stat{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.stat strong{font-size:2rem;display:block}.stat span{color:var(--muted);font-size:.85rem}
+.project{display:flex;flex-direction:column;min-height:230px}.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(36,217,255,.1);color:var(--cyan);font-size:.72rem;font-weight:800;margin-bottom:15px;width:max-content}.project a{margin-top:auto;color:var(--cyan);font-weight:800}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contact-card{padding:30px;border-radius:22px;background:linear-gradient(135deg,rgba(124,92,255,.16),rgba(36,217,255,.06));border:1px solid var(--line)}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.socials{display:flex;gap:12px;margin-top:18px}.socials a{padding:9px 13px;border:1px solid var(--line);border-radius:10px}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+#top{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border-radius:50%;background:var(--accent);color:white;z-index:10;opacity:0;pointer-events:none;transition:.3s}#top.show{opacity:1;pointer-events:auto}
+@media(max-width:800px){.links{display:none}.hero-grid,.contact{grid-template-columns:1fr}.orbit{width:260px;height:260px;margin:auto}.avatar{width:155px;height:155px}h1{letter-spacing:-3px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.skill{grid-template-columns:110px 1fr}}
+@media(max-width:480px){.stats{grid-template-columns:1fr}.hero{padding-top:110px}}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="logo" href="#home">SP<span>.</span></a>
+  <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  <button class="theme" id="theme" aria-label="Toggle theme">☀️</button>
+</div></nav>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+  <div class="reveal">
+    <span class="badge">GEOLOGIST • RESEARCHER • EXPLORATION GEOPHYSICS</span>
+    <h1>Sujan <span class="gradient">Paudyal</span></h1>
+    <p>Geology graduate and emerging researcher interested in seismic site characterization, MASW, GIS-based microzonation, and sustainable energy geophysics.</p>
+    <div class="actions"><a class="btn" href="#research">Explore My Research →</a><a class="btn alt" href="#contact">Let's Connect</a></div>
+  </div>
+  <div class="orbit"><div class="avatar">SP</div><i class="float-dot d1"></i><i class="float-dot d2"></i></div>
+</div></section>
+
+<section id="about"><div class="container reveal">
+  <h2 class="section-title">About Me</h2>
+  <p class="section-sub">A geology professional building a research profile at the intersection of earth science, near-surface geophysics, seismic hazard assessment, and spatial analysis.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🌋</div><h3>Geology</h3><p>BSc in Geology from Tri-Chandra Multiple Campus, Tribhuvan University, Nepal.</p></div>
+    <div class="card"><div class="icon">📡</div><h3>Geophysics</h3><p>Focused on MASW, shear-wave velocity, seismic response, subsurface characterization, and applied geophysics.</p></div>
+    <div class="card"><div class="icon">🗺️</div><h3>GIS & Mapping</h3><p>Interested in geological mapping, spatial analysis, seismic microzonation, and research visualization.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>60.3%</strong><span>BSc First Division</span></div>
+    <div class="stat"><strong>MASW</strong><span>Primary geophysical method</span></div>
+    <div class="stat"><strong>Western</strong><span>Nepal research focus</span></div>
+    <div class="stat"><strong>GIS</strong><span>Spatial research tool</span></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="container reveal">
+  <h2 class="section-title">Academic Journey</h2>
+  <p class="section-sub">Selected milestones and research direction.</p>
+  <div class="timeline">
+    <div class="item"><span class="date">BACHELOR'S</span><h3>BSc in Geology — Tribhuvan University</h3><p>Built a foundation in geology, field investigation, structural geology, geomorphology, and earth-science research.</p></div>
+    <div class="item"><span class="date">RESEARCH</span><h3>Seismic Site Characterization</h3><p>Developing research around MASW surveys, Vs₃₀ estimation, local geology, site response, and seismic microzonation in Western Nepal.</p></div>
+    <div class="item"><span class="date">PUBLICATION / OUTREACH</span><h3>GeoWorld Contributor</h3><p>Authored an article on the flood and challenges of Rasuwagadhi–Kerung border, connecting geological hazards with regional infrastructure.</p></div>
+    <div class="item"><span class="date">NEXT STEP</span><h3>Graduate Research Aspirations</h3><p>Interested in exploration geophysics, sustainable energy geophysics, seismic inversion, geological CO₂ storage monitoring, and high-resolution subsurface characterization.</p></div>
+  </div>
+</div></section>
+
+<section id="research"><div class="container reveal">
+  <h2 class="section-title">Research Focus</h2>
+  <p class="section-sub">Current interests and proposed research themes.</p>
+  <div class="grid">
+    <div class="card project"><span class="tag">PRIMARY</span><h3>Seismic Site Characterization</h3><p>Characterizing near-surface materials and shear-wave velocity using Multichannel Analysis of Surface Waves (MASW).</p><a href="#contact">Discuss →</a></div>
+    <div class="card project"><span class="tag">HAZARD</span><h3>Seismic Microzonation</h3><p>Combining geology, geophysics and GIS to understand spatial variation in site conditions and seismic effects.</p><a href="#contact">Discuss →</a></div>
+    <div class="card project"><span class="tag">GEOPHYSICS</span><h3>Sustainable Energy Geophysics</h3><p>Exploring applications of time-lapse seismic methods, inversion, subsurface monitoring, and geological CO₂ storage.</p><a href="#contact">Discuss →</a></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="container reveal">
+  <h2 class="section-title">Skills</h2>
+  <p class="section-sub">A visual snapshot of my current technical toolkit. Edit the percentages to match your CV.</p>
+  <div class="skills">
+    <div class="skill"><b>Geological Mapping</b><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+    <div class="skill"><b>GIS / Spatial Analysis</b><div class="bar"><div class="fill" style="--w:82%"></div></div></div>
+    <div class="skill"><b>MASW / Surface Waves</b><div class="bar"><div class="fill" style="--w:78%"></div></div></div>
+    <div class="skill"><b>Seismic Interpretation</b><div class="bar"><div class="fill" style="--w:70%"></div></div></div>
+    <div class="skill"><b>Research & Technical Writing</b><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container reveal">
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="section-sub">Open to academic collaboration, geoscience research opportunities, and graduate research discussions.</p>
+  <div class="contact">
+    <div class="contact-card"><h3>Research Collaboration</h3><p>Interested in seismic characterization, MASW, GIS, exploration geophysics, and sustainable energy applications?</p><div class="actions"><a class="btn" href="mailto:your.email@example.com">Email Me</a></div></div>
+    <div class="contact-card"><h3>Online Profiles</h3><p>Replace these placeholders with your actual professional links.</p><div class="socials"><a href="#" aria-label="LinkedIn">LinkedIn</a><a href="#" aria-label="GitHub">GitHub</a><a href="#" aria-label="Google Scholar">Scholar</a></div></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="container">© <span id="year"></span> Sujan Paudyal · Built as an interactive academic CV.</div></footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+const skillObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(x=>x.style.transform='scaleX(1)');skillObserver.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('#skills').forEach(el=>skillObserver.observe(el));
+const theme=document.getElementById('theme');
+theme.onclick=()=>{document.body.classList.toggle('light');theme.textContent=document.body.classList.contains('light')?'🌙':'☀️';localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')};
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');theme.textContent='🌙'}
+const top=document.getElementById('top');
+window.addEventListener('scroll',()=>top.classList.toggle('show',scrollY>500));
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
