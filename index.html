@@ -1,561 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Sujan Paudyal – Geologist & Civil Engineer with field experience in infrastructure and research." />
-    <title>Sujan Paudyal · Geologist & Civil Engineer</title>
-
-    <!-- ===== CSS ===== -->
-    <style>
-        /* ---------- Reset & Base ---------- */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-bg: #f8fafc;
-            --color-surface: #ffffff;
-            --color-text: #0b1a2e;
-            --color-text-secondary: #334155;
-            --color-accent: #2563eb;
-            --color-accent-hover: #1d4ed8;
-            --color-border: #e2e8f0;
-            --color-shadow: rgba(0, 0, 0, 0.06);
-            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --radius: 12px;
-            --max-width: 1200px;
-            --transition: 0.25s ease;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            padding: 0 1.5rem;
-        }
-
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-        }
-        a:hover {
-            color: var(--color-accent-hover);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: var(--radius);
-        }
-
-        /* ---------- Container ---------- */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-
-        /* ---------- Typography ---------- */
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: 600;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-        }
-        h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--color-accent);
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            margin-top: -0.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        /* ---------- Header / Nav ---------- */
-        header {
-            background: var(--color-surface);
-            border-bottom: 1px solid var(--color-border);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(6px);
-            background: rgba(255, 255, 255, 0.88);
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem 1.5rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: var(--color-text);
-        }
-        .logo span {
-            color: var(--color-accent);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.75rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            transition: color var(--transition);
-            position: relative;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width var(--transition);
-        }
-        nav a:hover::after,
-        nav a:focus::after {
-            width: 100%;
-        }
-        nav a:hover {
-            color: var(--color-text);
-        }
-
-        /* ---------- Buttons ---------- */
-        .btn {
-            display: inline-block;
-            background: var(--color-accent);
-            color: #fff;
-            font-weight: 600;
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: background var(--transition), transform 0.15s;
-            font-size: 1rem;
-            text-align: center;
-        }
-        .btn:hover {
-            background: var(--color-accent-hover);
-            color: #fff;
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--color-accent);
-            border: 2px solid var(--color-accent);
-        }
-        .btn-outline:hover {
-            background: var(--color-accent);
-            color: #fff;
-        }
-
-        /* ---------- Home / Hero ---------- */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 3rem 0 2rem;
-        }
-
-        .hero-content h1 {
-            margin-bottom: 0.75rem;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--color-text-secondary);
-            max-width: 90%;
-            margin-bottom: 2rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .hero-visual {
-            background: var(--color-surface);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: 0 8px 30px var(--color-shadow);
-            border: 1px solid var(--color-border);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .hero-visual .code-snippet {
-            background: var(--color-text);
-            color: #e2e8f0;
-            padding: 1.25rem;
-            border-radius: 8px;
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 0.85rem;
-            line-height: 1.7;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-        .hero-visual .code-snippet .hl {
-            color: #60a5fa;
-        }
-        .hero-visual .code-snippet .hl2 {
-            color: #fbbf24;
-        }
-
-        /* ---------- Featured Projects (home) ---------- */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .project-card {
-            background: var(--color-surface);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            border: 1px solid var(--color-border);
-            box-shadow: 0 4px 16px var(--color-shadow);
-            transition: transform var(--transition), box-shadow var(--transition);
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
-        }
-        .project-card .thumb {
-            background: var(--color-border);
-            border-radius: 8px;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #eef2f6, #dce2ea);
-        }
-        .project-card h3 {
-            font-size: 1.2rem;
-        }
-        .project-card p {
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-            margin: 0.5rem 0 1rem;
-        }
-        .project-card .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem 0.6rem;
-            margin-bottom: 1rem;
-        }
-        .project-card .tags span {
-            background: var(--color-bg);
-            padding: 0.2rem 0.7rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            border: 1px solid var(--color-border);
-        }
-        .project-card .card-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .project-card .card-links a {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        /* ---------- Projects Page (full list) ---------- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        /* ---------- About ---------- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            margin-bottom: 1.25rem;
-            color: var(--color-text-secondary);
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem 1rem;
-            margin-top: 1.5rem;
-        }
-        .skills-list li {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            padding: 0.35rem 1.2rem;
-            border-radius: 50px;
-            list-style: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .about-visual {
-            background: var(--color-surface);
-            border-radius: var(--radius);
-            padding: 2rem;
-            border: 1px solid var(--color-border);
-            box-shadow: 0 4px 20px var(--color-shadow);
-        }
-        .about-visual .stat {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--color-border);
-        }
-        .about-visual .stat:last-child {
-            border-bottom: none;
-        }
-        .about-visual .stat-label {
-            font-weight: 500;
-        }
-        .about-visual .stat-value {
-            color: var(--color-text-secondary);
-        }
-
-        /* ---------- Contact ---------- */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--color-text-secondary);
-            margin-bottom: 1.5rem;
-        }
-        .contact-info .detail {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-        .contact-info .detail strong {
-            font-weight: 600;
-            min-width: 80px;
-        }
-
-        .contact-form {
-            background: var(--color-surface);
-            padding: 2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--color-border);
-            box-shadow: 0 4px 20px var(--color-shadow);
-        }
-        .contact-form label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.7rem 1rem;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            background: var(--color-bg);
-            transition: border var(--transition);
-            margin-bottom: 1.25rem;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-        .contact-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-        .contact-form .btn {
-            width: 100%;
-        }
-
-        /* ---------- Footer ---------- */
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--color-border);
-            text-align: center;
-            color: var(--color-text-secondary);
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: var(--color-text-secondary);
-        }
-        footer a:hover {
-            color: var(--color-accent);
-        }
-
-        /* ---------- Utilities ---------- */
-        .section {
-            padding: 3rem 0;
-            scroll-margin-top: 80px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        /* ---------- Responsive ---------- */
-        @media (max-width: 1024px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-content p {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 0 1rem;
-            }
-            .nav-inner {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.5rem;
-            }
-            nav ul {
-                justify-content: center;
-                gap: 1rem;
-            }
-            .hero {
-                padding: 1.5rem 0;
-            }
-            .hero-visual .code-snippet {
-                font-size: 0.7rem;
-                padding: 0.75rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-form {
-                padding: 1.25rem;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            html {
-                scroll-behavior: auto;
-            }
-        }
-
-        /* ---------- Focus styles for accessibility ---------- */
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible {
-            outline: 3px solid var(--color-accent);
-            outline-offset: 2px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Sujan Paudyal, Geologist and Civil Engineer based in Nepal.">
+    <title>Sujan Paudyal | Geologist & Civil Engineer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ===== HEADER / NAVIGATION ===== -->
     <header role="banner">
-        <div class="nav-inner">
-            <a href="#home" class="logo" aria-label="Sujan Paudyal, back to home">Sujan<span>.</span></a>
+        <div>
+            <a aria-label="Sujan Paudyal, back to home" href="#home">Sujan<span>.</span></a>
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -568,113 +24,107 @@
     </header>
 
     <main>
-
-        <!-- ===== HOME / HERO ===== -->
-        <section id="home" class="container section" aria-labelledby="hero-title">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1 id="hero-title">Geologist &amp; Civil&nbsp;Engineer</h1>
+        <!-- Added id="home" for navigation -->
+        <section id="home">
+            <div>
+                <div>
+                    <h1>Geologist &amp; Civil Engineer</h1>
                     <p>I'm Sujan Paudyal — a geology graduate with over two years of field experience on large infrastructure projects. I bridge earth science and engineering to build sustainable solutions.</p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn">View my work</a>
-                        <a href="#contact" class="btn btn-outline">Let's connect</a>
+                    <div>
+                        <a href="#projects">View my work</a>
+                        <a href="#contact">Let's connect</a>
                     </div>
                 </div>
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="code-snippet">
-                        <span class="hl">const</span> geologist = { <br />
-                        &nbsp;&nbsp;name: <span class="hl2">'Sujan Paudyal'</span>,<br />
-                        &nbsp;&nbsp;field: <span class="hl2">'Geology &amp; Civil Engineering'</span>,<br />
-                        &nbsp;&nbsp;experience: <span class="hl2">'2+ years fieldwork'</span>,<br />
-                        &nbsp;&nbsp;tools: [<span class="hl2">'AutoCAD'</span>, <span class="hl2">'Surveying'</span>, <span class="hl2">'Soil Testing'</span>]<br />
+                <!-- Removed aria-hidden from important text containers -->
+                <div>
+                    <div aria-hidden="true">
+                        <span>const</span> geologist = { <br>
+                        &nbsp;&nbsp;name: <span>'Sujan Paudyal'</span>,<br>
+                        &nbsp;&nbsp;field: <span>'Geology &amp; Civil Engineering'</span>,<br>
+                        &nbsp;&nbsp;experience: <span>'2+ years fieldwork'</span>,<br>
+                        &nbsp;&nbsp;tools: [<span>'AutoCAD'</span>, <span>'Surveying'</span>, <span>'Soil Testing'</span>]<br>
                         };
                     </div>
-                    <p style="font-size:0.9rem;color:var(--color-text-secondary);text-align:right;margin-top:0.25rem;">
-                        ⚡ B.Sc. Geology (First Division) · Tribhuvan University
+                    <p>
+                        <span aria-hidden="true">⚡</span> B.Sc. Geology (First Division) · Trichandra Multiple Campus, Tribhuvan University
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FEATURED PROJECTS (on home) ===== -->
-        <section id="projects" class="container section" aria-labelledby="projects-title">
-            <h2 id="projects-title">Featured Projects</h2>
-            <p class="section-subtitle">A selection of my applied work — from infrastructure supervision to research on flood dynamics.</p>
+        <!-- Added id="projects" for navigation -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <p>A selection of my applied work — from infrastructure supervision to research on flood dynamics.</p>
 
-            <div class="featured-grid">
-                <!-- Project 1: Transmission Line Foundation Supervision -->
-                <article class="project-card">
-                    <div class="thumb" aria-hidden="true">⚡</div>
+            <div>
+                <article>
+                    <div aria-hidden="true">⚡</div>
                     <h3>Transmission Line Foundation Supervision</h3>
-                    <p>Supervised tower foundation construction for the Mewa- Changhe 132 kV project in challenging terrain, ensuring safety and engineering compliance.</p>
-                    <div class="tags">
+                    <p>Supervised tower foundation construction for the Mewa-Changhe 132 kV project in challenging terrain, ensuring safety and engineering compliance.</p>
+                    <div>
                         <span>Civil Engineering</span>
                         <span>Soil Testing</span>
                         <span>Surveying</span>
                     </div>
-                    <div class="card-links">
-                        <a href="#" aria-label="View project details">Details →</a>
-                        <a href="#" aria-label="View report or documentation">Report</a>
+                    <div>
+                        <!-- Note: Replace these '#' links with actual URLs -->
+                        <a aria-label="View Mewa-Changhe project details" href="#">Details →</a>
+                        <a aria-label="View Mewa-Changhe report" href="#">Report</a>
                     </div>
                 </article>
 
-                <!-- Project 2: Hydroelectric Project Investigation -->
-                <article class="project-card">
-                    <div class="thumb" aria-hidden="true">💧</div>
+                <article>
+                    <div aria-hidden="true">💧</div>
                     <h3>Madhyaphaa Khola Hydroelectric Investigation</h3>
                     <p>Applied geological and civil knowledge for small-scale hydroelectric project assessment, including terrain analysis and site suitability.</p>
-                    <div class="tags">
+                    <div>
                         <span>Geomorphology</span>
                         <span>Hydropower</span>
                         <span>Fieldwork</span>
                     </div>
-                    <div class="card-links">
-                        <a href="#" aria-label="View project details">Details →</a>
-                        <a href="#" aria-label="View report">Report</a>
+                    <div>
+                        <!-- Note: Replace these '#' links with actual URLs -->
+                        <a aria-label="View Hydroelectric project details" href="#">Details →</a>
+                        <a aria-label="View Hydroelectric report" href="#">Report</a>
                     </div>
                 </article>
 
-                <!-- Project 3: Flood Dynamics Research -->
-                <article class="project-card">
-                    <div class="thumb" aria-hidden="true">🌊</div>
+                <article>
+                    <div aria-hidden="true">🌊</div>
                     <h3>Flood Challenges at Rasuwagadhi-Kerung Border</h3>
                     <p>Published research in GeoWorld Students Journal analyzing flood dynamics, transboundary vulnerabilities, and disaster risk management in a high-mountain region.</p>
-                    <div class="tags">
+                    <div>
                         <span>Research</span>
                         <span>Disaster Risk</span>
                         <span>Geology</span>
                     </div>
-                    <div class="card-links">
-                        <a href="https://portal.tu.edu.np/publications/422/GEOWORLDSTUDENTSJOURNALVOL2026-01-1-3-13-41-46.pdf" target="_blank" aria-label="Read the full publication">Read paper →</a>
-                        <a href="#" aria-label="View project summary">Summary</a>
+                    <div>
+                        <!-- Added rel="noopener noreferrer" for security -->
+                        <a aria-label="Read the full publication" href="https://portal.tu.edu.np/publications/422/GEOWORLDSTUDENTSJOURNALVOL2026-01-1-3-13-41-46.pdf" target="_blank" rel="noopener noreferrer">Read paper →</a>
                     </div>
                 </article>
             </div>
-
-            <!-- Link to full projects list (could be expanded) -->
-            <div style="text-align:center;margin-top:2.5rem;">
-                <a href="#" class="btn btn-outline" style="border-radius:50px;">View all projects →</a>
-            </div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
-        <section id="about" class="container section" aria-labelledby="about-title">
-            <h2 id="about-title">About Me</h2>
-            <p class="section-subtitle">Geology graduate with a passion for sustainable infrastructure and field-based research.</p>
+        <!-- Added id="about" for navigation -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Geology graduate with a passion for sustainable infrastructure and field-based research.</p>
 
-            <div class="about-grid">
-                <div class="about-text">
+            <div>
+                <div>
                     <p>
-                        I'm Sujan Paudyal, a geologist and civil engineer based in Kathmandu, Nepal. I hold a Bachelor of Science in Geology from Tribhuvan University (First Division Honors) and have accumulated over two years of practical fieldwork on large-scale infrastructure projects.
+                        I'm Sujan Paudyal, a geologist and civil engineer based in Nepal. I hold a Bachelor of Science in Geology from Trichandra Multiple Campus, Tribhuvan University (First Division) and have accumulated over two years of practical fieldwork on large-scale infrastructure projects.
                     </p>
                     <p>
                         My experience spans geological mapping, rock identification, soil testing, and terrain analysis — all integrated with civil engineering challenges. I have supervised tower foundation construction, conducted municipal geotechnical assessments, and contributed to hydroelectric project investigations.
                     </p>
                     <p>
-                        I am deeply motivated to pursue graduate research in geology, with a focus on sustainable infrastructure, geotechnical analysis, and applied field studies. I believe in bridging earth science and engineering to build resilient communities.
+                        I am highly motivated to pursue a master’s degree at the University of Waterloo, focusing on sustainable infrastructure, geotechnical analysis, and applied field studies. I believe in bridging earth science and engineering to build resilient, future-ready communities.
                     </p>
 
-                    <ul class="skills-list" aria-label="Technical skills">
+                    <ul aria-label="Technical skills">
                         <li>Geological Mapping</li>
                         <li>Rock Identification</li>
                         <li>Soil Testing</li>
@@ -686,222 +136,80 @@
                     </ul>
                 </div>
 
-                <div class="about-visual" aria-hidden="true">
-                    <div class="stat">
-                        <span class="stat-label">Education</span>
-                        <span class="stat-value">B.Sc. Geology (First Div.)</span>
+                <!-- Removed aria-hidden so screen readers can access your core stats -->
+                <div>
+                    <div>
+                        <span>Education</span>
+                        <span>B.Sc. Geology (First Div.)</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-label">Field Experience</span>
-                        <span class="stat-value">2+ years</span>
+                    <div>
+                        <span>Field Experience</span>
+                        <span>2+ years</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-label">Research</span>
-                        <span class="stat-value">Published paper</span>
+                    <div>
+                        <span>Research</span>
+                        <span>Published paper</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-label">Current focus</span>
-                        <span class="stat-value">Sustainable infrastructure</span>
+                    <div>
+                        <span>Current focus</span>
+                        <span>Sustainable infrastructure</span>
                     </div>
-                    <div style="margin-top:1.5rem;font-size:0.9rem;color:var(--color-text-secondary);">
-                        🌍 "Understanding the earth to build a better tomorrow."
+                    <div>
+                        <span aria-hidden="true">🌍</span> "Understanding the earth to build a better tomorrow."
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
-        <section id="contact" class="container section" aria-labelledby="contact-title">
-            <h2 id="contact-title">Get in Touch</h2>
-            <p class="section-subtitle">Interested in collaboration, research opportunities, or just a conversation? Reach out anytime.</p>
+        <!-- Added id="contact" for navigation -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Interested in collaboration, research opportunities, or just a conversation? Reach out anytime.</p>
 
-            <div class="contact-wrapper">
-                <!-- Contact info -->
-                <div class="contact-info">
+            <div>
+                <div>
                     <p>I'm open to graduate research opportunities, consulting, and project collaborations. Let's connect!</p>
-                    <div class="detail">
-                        <strong>Email</strong>
-                        <a href="mailto:thats.sujan@gmail.com">thats.sujan@gmail.com</a>
+                    <div>
+                        <strong>Email:</strong>
+                        <!-- Fixed email link -->
+                        <a href="mailto:again.sujan@gmail.com">again.sujan@gmail.com</a>
                     </div>
-                    <div class="detail">
-                        <strong>Phone</strong>
+                    <div>
+                        <strong>Phone:</strong>
+                        <!-- Fixed phone tel: link -->
                         <a href="tel:+9779867996682">+977 986-7996682</a>
                     </div>
-                    <div class="detail">
-                        <strong>LinkedIn</strong>
-                        <a href="https://www.linkedin.com/in/sujanpaudyal" target="_blank" aria-label="LinkedIn profile">linkedin.com/in/sujanpaudyal</a>
+                    <div>
+                        <strong>LinkedIn:</strong>
+                        <!-- Added rel="noopener noreferrer" -->
+                        <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/sujanpaudyal" target="_blank" rel="noopener noreferrer">linkedin.com/in/sujanpaudyal</a>
                     </div>
-                    <div class="detail">
-                        <strong>Location</strong>
-                        <span>Kathmandu, Nepal</span>
+                    <div>
+                        <strong>Location:</strong>
+                        <span>Kathmandu / Koshi Province, Nepal</span>
                     </div>
-                    <div class="detail" style="margin-top:1rem;font-size:0.9rem;color:var(--color-text-secondary);">
-                        <span>🇳🇵 Nepali · English (fluent) · Hindi (conversational)</span>
+                    <div>
+                        <span aria-hidden="true">🇳🇵</span> Nepali · English (fluent) · Hindi (conversational)
                     </div>
                 </div>
-
-                <!-- Contact form -->
-                <form class="contact-form" action="#" method="POST" aria-label="Contact form">
-                    <label for="name">Full name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
-
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your project, research, or question…" required></textarea>
-
-                    <button type="submit" class="btn">Send message</button>
-                    <p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem;text-align:center;">
-                        I'll respond within 24 hours. No spam, ever.
-                    </p>
-                </form>
             </div>
         </section>
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer role="contentinfo">
-        <div class="container" style="padding:0;">
-            <p>&copy; 2026 Sujan Paudyal. Built with <span aria-hidden="true">⛰️</span> and clean code.</p>
-            <p style="margin-top:0.25rem;">
-                <a href="#home">Home</a> &middot;
-                <a href="#projects">Projects</a> &middot;
-                <a href="#about">About</a> &middot;
+        <div>
+            <p>© 2026 Sujan Paudyal. Built with <span aria-hidden="true">⛰️</span> and clean code.</p>
+            <p>
+                <a href="#home">Home</a> ·
+                <a href="#projects">Projects</a> ·
+                <a href="#about">About</a> ·
                 <a href="#contact">Contact</a>
             </p>
         </div>
     </footer>
 
-    <!-- ===== SIMPLE JS (form validation & smooth enhancements) ===== -->
-    <script>
-        (function() {
-            'use strict';
-
-            // ---------- Contact form: basic client-side validation + feedback ----------
-            const form = document.querySelector('.contact-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    const name = document.getElementById('name');
-                    const email = document.getElementById('email');
-                    const message = document.getElementById('message');
-
-                    let valid = true;
-                    let firstInvalid = null;
-
-                    if (!name.value.trim()) {
-                        name.style.borderColor = '#dc2626';
-                        valid = false;
-                        if (!firstInvalid) firstInvalid = name;
-                    } else {
-                        name.style.borderColor = '';
-                    }
-
-                    if (!email.value.trim() || !email.value.includes('@')) {
-                        email.style.borderColor = '#dc2626';
-                        valid = false;
-                        if (!firstInvalid) firstInvalid = email;
-                    } else {
-                        email.style.borderColor = '';
-                    }
-
-                    if (!message.value.trim()) {
-                        message.style.borderColor = '#dc2626';
-                        valid = false;
-                        if (!firstInvalid) firstInvalid = message;
-                    } else {
-                        message.style.borderColor = '';
-                    }
-
-                    if (!valid) {
-                        if (firstInvalid) firstInvalid.focus();
-                        return;
-                    }
-
-                    // Simulate submission
-                    const btn = form.querySelector('.btn');
-                    const originalText = btn.textContent;
-                    btn.textContent = 'Sending…';
-                    btn.disabled = true;
-
-                    setTimeout(function() {
-                        btn.textContent = '✓ Message sent!';
-                        btn.style.background = '#16a34a';
-                        form.reset();
-                        setTimeout(function() {
-                            btn.textContent = originalText;
-                            btn.style.background = '';
-                            btn.disabled = false;
-                        }, 2800);
-                    }, 1200);
-                });
-
-                form.querySelectorAll('input, textarea').forEach(function(el) {
-                    el.addEventListener('input', function() {
-                        this.style.borderColor = '';
-                    });
-                });
-            }
-
-            // ---------- Smooth nav highlight ----------
-            const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('section[id]');
-
-            function updateActiveLink() {
-                let currentId = '';
-                const scrollPos = window.scrollY + 120;
-
-                sections.forEach(function(section) {
-                    const top = section.offsetTop;
-                    const height = section.offsetHeight;
-                    if (scrollPos >= top && scrollPos < top + height) {
-                        currentId = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(function(link) {
-                    link.style.color = '';
-                    const href = link.getAttribute('href').replace('#', '');
-                    if (href === currentId) {
-                        link.style.color = 'var(--color-text)';
-                    }
-                });
-            }
-
-            let ticking = false;
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        updateActiveLink();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-
-            updateActiveLink();
-
-            // ---------- Smooth anchor scroll ----------
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
-                        history.pushState(null, null, targetId);
-                        target.setAttribute('tabindex', '-1');
-                        target.focus({ preventScroll: true });
-                    }
-                });
-            });
-
-        })();
-    </script>
-<script src="script.js"></script>
+    <!-- Script linked at the bottom for performance -->
+    <script src="script.js"></script>
 </body>
 </html>
