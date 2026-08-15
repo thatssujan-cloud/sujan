@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Alex Rivera</title>
+  <meta name="description" content="A closer look at selected projects spanning product design, front-end engineering, and design systems work.">
+  <meta name="theme-color" content="#f1f3ee">
+  <meta property="og:title" content="Projects — Alex Rivera">
+  <meta property="og:description" content="A closer look at selected projects spanning product design, front-end engineering, and design systems work.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Alex Rivera — Home">
+        <span class="logo__mark" aria-hidden="true">AR</span>
+        <span class="logo__text">Alex Rivera</span>
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="projects.html" class="nav__link active" aria-current="page">Projects</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro container">
+      <p class="eyebrow"><span aria-hidden="true">// </span>projects</p>
+      <h1>Selected Work</h1>
+      <p class="page-intro__lead">A closer look at a few projects spanning product design, front-end engineering, and design systems work. Each one includes the problem I was solving, my approach, and what shipped.</p>
+    </section>
+
+    <section class="case-studies container">
+      <article class="case-study" id="northwind-dashboard">
+        <div class="media-placeholder case-study__media" role="img" aria-label="Screenshot placeholder for Northwind Analytics Dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <path d="M21 15l-5-5L5 21"></path>
+          </svg>
+        </div>
+        <div class="case-study__content">
+          <h2>Northwind Analytics Dashboard</h2>
+          <p class="case-study__meta">Product Design &amp; Front-End Development · 2024–2025</p>
+          <div class="case-study__grid">
+            <div>
+              <h3>Challenge</h3>
+              <p>The operations team tracked performance across 40+ spreadsheets, making trends nearly impossible to spot until it was too late to act on them.</p>
+            </div>
+            <div>
+              <h3>Approach</h3>
+              <p>I ran three rounds of user interviews to map the decisions the team actually needed to make, then designed a single dashboard around those decisions instead of the raw data.</p>
+            </div>
+            <div>
+              <h3>Outcome</h3>
+              <p>The team now catches performance issues days earlier on average, and onboarding new hires to the reporting workflow dropped from two weeks to two days.</p>
+            </div>
+          </div>
+          <ul class="tag-list">
+            <li class="tag">React</li>
+            <li class="tag">TypeScript</li>
+            <li class="tag">D3.js</li>
+            <li class="tag">Node.js</li>
+          </ul>
+          <div class="case-study__links">
+            <a href="#" class="link-arrow">Live Demo</a>
+            <a href="#" class="link-arrow">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-study" id="fernbank-design-system">
+        <div class="media-placeholder case-study__media" role="img" aria-label="Screenshot placeholder for Fernbank Design System">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <path d="M21 15l-5-5L5 21"></path>
+          </svg>
+        </div>
+        <div class="case-study__content">
+          <h2>Fernbank Design System</h2>
+          <p class="case-study__meta">Design Systems &amp; Front-End Development · 2023–2024</p>
+          <div class="case-study__grid">
+            <div>
+              <h3>Challenge</h3>
+              <p>Four product teams were shipping visually inconsistent UI and re-solving the same interaction patterns, which slowed everyone down.</p>
+            </div>
+            <div>
+              <h3>Approach</h3>
+              <p>I audited existing patterns across all four products, consolidated them into a token-based system in Figma, then built the matching component library in React with full Storybook documentation.</p>
+            </div>
+            <div>
+              <h3>Outcome</h3>
+              <p>New features now ship roughly a third faster, and design QA time dropped significantly once teams had a shared, tested set of components.</p>
+            </div>
+          </div>
+          <ul class="tag-list">
+            <li class="tag">Figma</li>
+            <li class="tag">React</li>
+            <li class="tag">Storybook</li>
+            <li class="tag">Design Tokens</li>
+          </ul>
+          <div class="case-study__links">
+            <a href="#" class="link-arrow">Live Demo</a>
+            <a href="#" class="link-arrow">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-study" id="trailhead-trip-planner">
+        <div class="media-placeholder case-study__media" role="img" aria-label="Screenshot placeholder for Trailhead Trip Planner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <path d="M21 15l-5-5L5 21"></path>
+          </svg>
+        </div>
+        <div class="case-study__content">
+          <h2>Trailhead Trip Planner</h2>
+          <p class="case-study__meta">Product Design &amp; Front-End Development · 2021–2022</p>
+          <div class="case-study__grid">
+            <div>
+              <h3>Challenge</h3>
+              <p>Users bounced between four separate apps to plan a single trip, and most trips never made it past the planning stage.</p>
+            </div>
+            <div>
+              <h3>Approach</h3>
+              <p>I designed one guided flow combining search, itinerary building, and budget tracking, then built it as a responsive web app so it worked well on mobile without a native app.</p>
+            </div>
+            <div>
+              <h3>Outcome</h3>
+              <p>Trip completion — users who finished planning and booked — increased meaningfully in the months after launch, and mobile session length nearly doubled.</p>
+            </div>
+          </div>
+          <ul class="tag-list">
+            <li class="tag">React</li>
+            <li class="tag">Node.js</li>
+            <li class="tag">Mapbox</li>
+            <li class="tag">Responsive Design</li>
+          </ul>
+          <div class="case-study__links">
+            <a href="#" class="link-arrow">Live Demo</a>
+            <a href="#" class="link-arrow">Source Code</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="more-projects container">
+      <div class="section-heading">
+        <p class="eyebrow"><span aria-hidden="true">// </span>more-projects</p>
+        <h2>Additional work</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for Loop habit tracker">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Loop — Habit Tracker PWA</h3>
+            <p>An installable, offline-capable habit tracker built to explore Progressive Web App patterns and local-first data storage.</p>
+            <ul class="tag-list">
+              <li class="tag">JavaScript</li>
+              <li class="tag">PWA</li>
+              <li class="tag">IndexedDB</li>
+            </ul>
+            <a href="#" class="link-arrow">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for Civic Voice accessibility audit tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Civic Voice — Accessibility Audit Tool</h3>
+            <p>An open-source CLI that scans static sites for common WCAG issues and outputs a plain-language report designers can act on.</p>
+            <ul class="tag-list">
+              <li class="tag">Node.js</li>
+              <li class="tag">WCAG</li>
+              <li class="tag">Open Source</li>
+            </ul>
+            <a href="#" class="link-arrow">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for a personal blog engine">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Personal Blog Engine</h3>
+            <p>A minimal, fast static blog engine built from scratch, with Markdown-based posts and sub-second build times.</p>
+            <ul class="tag-list">
+              <li class="tag">Node.js</li>
+              <li class="tag">Markdown</li>
+              <li class="tag">Static Site</li>
+            </ul>
+            <a href="#" class="link-arrow">View on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-banner container">
+      <h2>Like what you see?</h2>
+      <p>These are just a handful of highlights — I'm always happy to walk through more of my work in detail.</p>
+      <a href="contact.html" class="btn btn--primary">Let's Talk</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brand-top">
+          <span class="logo__mark" aria-hidden="true">AR</span>
+          <p>Building thoughtful, accessible digital experiences.</p>
+        </div>
+        <div class="token-strip">
+          <p class="token-strip__label"><span aria-hidden="true">// </span>this site's tokens</p>
+          <ul class="token-strip__list">
+            <li><span class="token-swatch token-swatch--paper" aria-hidden="true"></span>paper</li>
+            <li><span class="token-swatch token-swatch--ink" aria-hidden="true"></span>ink</li>
+            <li><span class="token-swatch token-swatch--blue" aria-hidden="true"></span>blue</li>
+            <li><span class="token-swatch token-swatch--signal" aria-hidden="true"></span>signal</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="site-footer__social">
+        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:hello@alexrivera.dev">Email</a></li>
+      </ul>
+      <p class="site-footer__copyright">&copy; <span id="year">2026</span> Alex Rivera. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

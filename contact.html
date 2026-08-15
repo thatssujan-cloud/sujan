@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Alex Rivera</title>
+  <meta name="description" content="Get in touch with Alex Rivera about freelance projects, full-time roles, or collaboration opportunities.">
+  <meta name="theme-color" content="#f1f3ee">
+  <meta property="og:title" content="Contact — Alex Rivera">
+  <meta property="og:description" content="Get in touch with Alex Rivera about freelance projects, full-time roles, or collaboration opportunities.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Alex Rivera — Home">
+        <span class="logo__mark" aria-hidden="true">AR</span>
+        <span class="logo__text">Alex Rivera</span>
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="projects.html" class="nav__link">Projects</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro container">
+      <p class="eyebrow"><span aria-hidden="true">// </span>contact</p>
+      <h1>Let's build something together</h1>
+      <p class="page-intro__lead">Have a project, a role, or just an idea you want to talk through? I'd love to hear from you — I read every message personally.</p>
+    </section>
+
+    <section class="contact container">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameError">
+          <p class="form-error" id="nameError" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="emailError">
+          <p class="form-error" id="emailError" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">What's this about?</label>
+          <select id="subject" name="subject">
+            <option value="">Select one (optional)</option>
+            <option value="freelance">Freelance project</option>
+            <option value="fulltime">Full-time opportunity</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required aria-describedby="messageError"></textarea>
+          <p class="form-error" id="messageError" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-alt">
+        <h2>Prefer email?</h2>
+        <p>Reach me directly at <a href="mailto:hello@alexrivera.dev">hello@alexrivera.dev</a>.</p>
+        <ul class="contact-alt__social">
+          <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn ↗<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brand-top">
+          <span class="logo__mark" aria-hidden="true">AR</span>
+          <p>Building thoughtful, accessible digital experiences.</p>
+        </div>
+        <div class="token-strip">
+          <p class="token-strip__label"><span aria-hidden="true">// </span>this site's tokens</p>
+          <ul class="token-strip__list">
+            <li><span class="token-swatch token-swatch--paper" aria-hidden="true"></span>paper</li>
+            <li><span class="token-swatch token-swatch--ink" aria-hidden="true"></span>ink</li>
+            <li><span class="token-swatch token-swatch--blue" aria-hidden="true"></span>blue</li>
+            <li><span class="token-swatch token-swatch--signal" aria-hidden="true"></span>signal</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="site-footer__social">
+        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:hello@alexrivera.dev">Email</a></li>
+      </ul>
+      <p class="site-footer__copyright">&copy; <span id="year">2026</span> Alex Rivera. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

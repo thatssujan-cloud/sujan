@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Alex Rivera</title>
+  <meta name="description" content="Background, skills, and the story behind Alex Rivera's design and development work.">
+  <meta name="theme-color" content="#f1f3ee">
+  <meta property="og:title" content="About — Alex Rivera">
+  <meta property="og:description" content="Background, skills, and the story behind Alex Rivera's design and development work.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Alex Rivera — Home">
+        <span class="logo__mark" aria-hidden="true">AR</span>
+        <span class="logo__text">Alex Rivera</span>
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="projects.html" class="nav__link">Projects</a></li>
+          <li><a href="about.html" class="nav__link active" aria-current="page">About</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="about-intro container">
+      <div class="about-intro__photo media-placeholder" role="img" aria-label="Photo placeholder for Alex Rivera">
+        <!-- Replace with: <img src="images/portrait.jpg" alt="Photo of Alex Rivera"> -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 21a8 8 0 1 0-16 0"></path>
+          <circle cx="12" cy="8" r="5"></circle>
+        </svg>
+      </div>
+      <div class="about-intro__content">
+        <p class="eyebrow"><span aria-hidden="true">// </span>about</p>
+        <h1>I build things that work well for the people using them.</h1>
+      </div>
+    </section>
+
+    <section class="about-story container">
+      <div class="about-story__text">
+        <p>I got into building things for the web almost by accident — tweaking the CSS on a hobby forum in high school until three in the morning, just to get the layout right. That instinct never really went away.</p>
+        <p>These days I work across the design-to-development handoff: sketching flows, building the component library that supports them, and writing the front-end code that ships them. I like projects where those two halves inform each other — where a technical constraint improves the design, or a design decision simplifies the code.</p>
+        <p>Outside of client and product work, I contribute to a couple of open-source accessibility tools and spend an unreasonable amount of time tuning my terminal setup. I'm always happy to talk shop — reach out if you want to compare notes or explore working together.</p>
+      </div>
+    </section>
+
+    <section class="skills container" aria-labelledby="skills-heading">
+      <div class="section-heading">
+        <p class="eyebrow"><span aria-hidden="true">// </span>skills</p>
+        <h2 id="skills-heading">What I bring to a project</h2>
+      </div>
+      <div class="skills__grid">
+        <div class="skills__group">
+          <h3>Design</h3>
+          <ul class="tag-list">
+            <li class="tag">Figma</li>
+            <li class="tag">Design Systems</li>
+            <li class="tag">Prototyping</li>
+            <li class="tag">User Research</li>
+            <li class="tag">Accessibility (WCAG)</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Development</h3>
+          <ul class="tag-list">
+            <li class="tag">HTML &amp; CSS</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">React</li>
+            <li class="tag">TypeScript</li>
+            <li class="tag">Node.js</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3>Tools &amp; Workflow</h3>
+          <ul class="tag-list">
+            <li class="tag">Git &amp; GitHub</li>
+            <li class="tag">Storybook</li>
+            <li class="tag">Notion</li>
+            <li class="tag">Agile Planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline container" aria-labelledby="timeline-heading">
+      <div class="section-heading">
+        <p class="eyebrow"><span aria-hidden="true">// </span>experience</p>
+        <h2 id="timeline-heading">Where I've worked</h2>
+      </div>
+      <ol class="timeline__list">
+        <li class="timeline__item">
+          <span class="timeline__year">2023 — Present</span>
+          <h3>Senior Product Designer, Fernbank Software</h3>
+          <p>Leading design for the core product experience, with a focus on accessible design systems and cross-team component libraries.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2021 — 2023</span>
+          <h3>Front-End Developer, Northwind Analytics</h3>
+          <p>Built and maintained the customer-facing dashboard product, partnering closely with design and data teams.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2019 — 2021</span>
+          <h3>UX Design Intern → Junior Designer, Trailhead Studio</h3>
+          <p>Started as an intern and grew into a junior design role, shipping features for a consumer travel app.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cta-banner container">
+      <h2>Let's build something together</h2>
+      <p>If my background sounds like a fit for what you're working on, I'd love to hear about it.</p>
+      <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brand-top">
+          <span class="logo__mark" aria-hidden="true">AR</span>
+          <p>Building thoughtful, accessible digital experiences.</p>
+        </div>
+        <div class="token-strip">
+          <p class="token-strip__label"><span aria-hidden="true">// </span>this site's tokens</p>
+          <ul class="token-strip__list">
+            <li><span class="token-swatch token-swatch--paper" aria-hidden="true"></span>paper</li>
+            <li><span class="token-swatch token-swatch--ink" aria-hidden="true"></span>ink</li>
+            <li><span class="token-swatch token-swatch--blue" aria-hidden="true"></span>blue</li>
+            <li><span class="token-swatch token-swatch--signal" aria-hidden="true"></span>signal</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="site-footer__social">
+        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:hello@alexrivera.dev">Email</a></li>
+      </ul>
+      <p class="site-footer__copyright">&copy; <span id="year">2026</span> Alex Rivera. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

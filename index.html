@@ -1,215 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sujan Paudyal, Geologist and Civil Engineer based in Nepal.">
-    <title>Sujan Paudyal | Geologist & Civil Engineer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera — Product Designer &amp; Front-End Developer</title>
+  <meta name="description" content="Portfolio of Alex Rivera, a product designer and front-end developer building accessible, thoughtfully-crafted digital products.">
+  <meta name="theme-color" content="#f1f3ee">
+  <meta property="og:title" content="Alex Rivera — Product Designer &amp; Front-End Developer">
+  <meta property="og:description" content="Portfolio of Alex Rivera, a product designer and front-end developer building accessible, thoughtfully-crafted digital products.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header role="banner">
-        <div>
-            <a aria-label="Sujan Paudyal, back to home" href="#home">Sujan<span>.</span></a>
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Alex Rivera — Home">
+        <span class="logo__mark" aria-hidden="true">AR</span>
+        <span class="logo__text">Alex Rivera</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link active" aria-current="page">Home</a></li>
+          <li><a href="projects.html" class="nav__link">Projects</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <p class="eyebrow"><span aria-hidden="true">// </span>status: open to new work</p>
+      <h1 class="hero__name">Alex Rivera</h1>
+      <p class="hero__role">Product Designer &amp; Front-End Developer</p>
+      <p class="hero__intro">
+        I design and build digital products that feel as good to use as they look —
+        from early concept sketches through to production-ready interfaces. Currently
+        focused on accessible design systems and performant front-end architecture.
+      </p>
+      <div class="hero__actions">
+        <a href="projects.html" class="btn btn--primary">View My Work</a>
+        <a href="contact.html" class="btn btn--secondary">Get In Touch</a>
+      </div>
+    </section>
+
+    <section class="featured-work container" aria-labelledby="featured-heading">
+      <div class="section-heading">
+        <p class="eyebrow"><span aria-hidden="true">// </span>selected-work</p>
+        <h2 id="featured-heading">A few projects I'm proud of</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for Northwind Analytics Dashboard">
+            <!-- Replace with: <img src="images/northwind.jpg" alt="Description of the dashboard interface"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Northwind Analytics Dashboard</h3>
+            <p>A real-time analytics dashboard that replaced a 40-tab spreadsheet workflow with a single, accessible view for a 12-person operations team.</p>
+            <ul class="tag-list">
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">D3.js</li>
+            </ul>
+            <a href="projects.html#northwind-dashboard" class="link-arrow">View project details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for Fernbank Design System">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Fernbank Design System</h3>
+            <p>A cross-platform design system and component library adopted by four product teams, cutting new-feature design time by roughly a third.</p>
+            <ul class="tag-list">
+              <li class="tag">Figma</li>
+              <li class="tag">React</li>
+              <li class="tag">Storybook</li>
+            </ul>
+            <a href="projects.html#fernbank-design-system" class="link-arrow">View project details</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="media-placeholder" role="img" aria-label="Screenshot placeholder for Trailhead Trip Planner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+          </div>
+          <div class="project-card__body">
+            <h3>Trailhead Trip Planner</h3>
+            <p>A mobile-first trip-planning app that turned a multi-app booking process into one guided flow, from itinerary to checkout.</p>
+            <ul class="tag-list">
+              <li class="tag">React</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">Mapbox</li>
+            </ul>
+            <a href="projects.html#trailhead-trip-planner" class="link-arrow">View project details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="skills-snapshot container">
+      <div class="section-heading">
+        <p class="eyebrow"><span aria-hidden="true">// </span>toolkit</p>
+        <h2>Tools &amp; technologies I reach for</h2>
+      </div>
+      <ul class="tag-list">
+        <li class="tag">Figma</li>
+        <li class="tag">React</li>
+        <li class="tag">TypeScript</li>
+        <li class="tag">Node.js</li>
+        <li class="tag">Design Systems</li>
+        <li class="tag">Accessibility (WCAG)</li>
+        <li class="tag">Storybook</li>
+        <li class="tag">Git &amp; GitHub</li>
+      </ul>
+    </section>
+
+    <section class="about-teaser container">
+      <div>
+        <p class="eyebrow"><span aria-hidden="true">// </span>about</p>
+        <h2>Design-minded, code-fluent</h2>
+        <p>I've spent the last several years working across the design-to-development handoff, which means I usually already know what's technically realistic before a mockup ships.</p>
+      </div>
+      <a href="about.html" class="btn btn--secondary">My Story</a>
+    </section>
+
+    <section class="cta-banner container">
+      <h2>Have a project in mind?</h2>
+      <p>I'm currently open to freelance work and select full-time opportunities. If you think we'd work well together, I'd love to hear from you.</p>
+      <a href="contact.html" class="btn btn--primary">Start a Conversation</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brand-top">
+          <span class="logo__mark" aria-hidden="true">AR</span>
+          <p>Building thoughtful, accessible digital experiences.</p>
         </div>
-    </header>
-
-    <main>
-        <!-- Added id="home" for navigation -->
-        <section id="home">
-            <div>
-                <div>
-                    <h1>Geologist &amp; Civil Engineer</h1>
-                    <p>I'm Sujan Paudyal — a geology graduate with over two years of field experience on large infrastructure projects. I bridge earth science and engineering to build sustainable solutions.</p>
-                    <div>
-                        <a href="#projects">View my work</a>
-                        <a href="#contact">Let's connect</a>
-                    </div>
-                </div>
-                <!-- Removed aria-hidden from important text containers -->
-                <div>
-                    <div aria-hidden="true">
-                        <span>const</span> geologist = { <br>
-                        &nbsp;&nbsp;name: <span>'Sujan Paudyal'</span>,<br>
-                        &nbsp;&nbsp;field: <span>'Geology &amp; Civil Engineering'</span>,<br>
-                        &nbsp;&nbsp;experience: <span>'2+ years fieldwork'</span>,<br>
-                        &nbsp;&nbsp;tools: [<span>'AutoCAD'</span>, <span>'Surveying'</span>, <span>'Soil Testing'</span>]<br>
-                        };
-                    </div>
-                    <p>
-                        <span aria-hidden="true">⚡</span> B.Sc. Geology (First Division) · Trichandra Multiple Campus, Tribhuvan University
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Added id="projects" for navigation -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <p>A selection of my applied work — from infrastructure supervision to research on flood dynamics.</p>
-
-            <div>
-                <article>
-                    <div aria-hidden="true">⚡</div>
-                    <h3>Transmission Line Foundation Supervision</h3>
-                    <p>Supervised tower foundation construction for the Mewa-Changhe 132 kV project in challenging terrain, ensuring safety and engineering compliance.</p>
-                    <div>
-                        <span>Civil Engineering</span>
-                        <span>Soil Testing</span>
-                        <span>Surveying</span>
-                    </div>
-                    <div>
-                        <!-- Note: Replace these '#' links with actual URLs -->
-                        <a aria-label="View Mewa-Changhe project details" href="#">Details →</a>
-                        <a aria-label="View Mewa-Changhe report" href="#">Report</a>
-                    </div>
-                </article>
-
-                <article>
-                    <div aria-hidden="true">💧</div>
-                    <h3>Madhyaphaa Khola Hydroelectric Investigation</h3>
-                    <p>Applied geological and civil knowledge for small-scale hydroelectric project assessment, including terrain analysis and site suitability.</p>
-                    <div>
-                        <span>Geomorphology</span>
-                        <span>Hydropower</span>
-                        <span>Fieldwork</span>
-                    </div>
-                    <div>
-                        <!-- Note: Replace these '#' links with actual URLs -->
-                        <a aria-label="View Hydroelectric project details" href="#">Details →</a>
-                        <a aria-label="View Hydroelectric report" href="#">Report</a>
-                    </div>
-                </article>
-
-                <article>
-                    <div aria-hidden="true">🌊</div>
-                    <h3>Flood Challenges at Rasuwagadhi-Kerung Border</h3>
-                    <p>Published research in GeoWorld Students Journal analyzing flood dynamics, transboundary vulnerabilities, and disaster risk management in a high-mountain region.</p>
-                    <div>
-                        <span>Research</span>
-                        <span>Disaster Risk</span>
-                        <span>Geology</span>
-                    </div>
-                    <div>
-                        <!-- Added rel="noopener noreferrer" for security -->
-                        <a aria-label="Read the full publication" href="https://portal.tu.edu.np/publications/422/GEOWORLDSTUDENTSJOURNALVOL2026-01-1-3-13-41-46.pdf" target="_blank" rel="noopener noreferrer">Read paper →</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Added id="about" for navigation -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Geology graduate with a passion for sustainable infrastructure and field-based research.</p>
-
-            <div>
-                <div>
-                    <p>
-                        I'm Sujan Paudyal, a geologist and civil engineer based in Nepal. I hold a Bachelor of Science in Geology from Trichandra Multiple Campus, Tribhuvan University (First Division) and have accumulated over two years of practical fieldwork on large-scale infrastructure projects.
-                    </p>
-                    <p>
-                        My experience spans geological mapping, rock identification, soil testing, and terrain analysis — all integrated with civil engineering challenges. I have supervised tower foundation construction, conducted municipal geotechnical assessments, and contributed to hydroelectric project investigations.
-                    </p>
-                    <p>
-                        I am highly motivated to pursue a master’s degree at the University of Waterloo, focusing on sustainable infrastructure, geotechnical analysis, and applied field studies. I believe in bridging earth science and engineering to build resilient, future-ready communities.
-                    </p>
-
-                    <ul aria-label="Technical skills">
-                        <li>Geological Mapping</li>
-                        <li>Rock Identification</li>
-                        <li>Soil Testing</li>
-                        <li>Terrain Analysis</li>
-                        <li>AutoCAD</li>
-                        <li>Surveying</li>
-                        <li>Foundation Construction</li>
-                        <li>MS Excel &amp; Word</li>
-                    </ul>
-                </div>
-
-                <!-- Removed aria-hidden so screen readers can access your core stats -->
-                <div>
-                    <div>
-                        <span>Education</span>
-                        <span>B.Sc. Geology (First Div.)</span>
-                    </div>
-                    <div>
-                        <span>Field Experience</span>
-                        <span>2+ years</span>
-                    </div>
-                    <div>
-                        <span>Research</span>
-                        <span>Published paper</span>
-                    </div>
-                    <div>
-                        <span>Current focus</span>
-                        <span>Sustainable infrastructure</span>
-                    </div>
-                    <div>
-                        <span aria-hidden="true">🌍</span> "Understanding the earth to build a better tomorrow."
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Added id="contact" for navigation -->
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Interested in collaboration, research opportunities, or just a conversation? Reach out anytime.</p>
-
-            <div>
-                <div>
-                    <p>I'm open to graduate research opportunities, consulting, and project collaborations. Let's connect!</p>
-                    <div>
-                        <strong>Email:</strong>
-                        <!-- Fixed email link -->
-                        <a href="mailto:again.sujan@gmail.com">again.sujan@gmail.com</a>
-                    </div>
-                    <div>
-                        <strong>Phone:</strong>
-                        <!-- Fixed phone tel: link -->
-                        <a href="tel:+9779867996682">+977 986-7996682</a>
-                    </div>
-                    <div>
-                        <strong>LinkedIn:</strong>
-                        <!-- Added rel="noopener noreferrer" -->
-                        <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/sujanpaudyal" target="_blank" rel="noopener noreferrer">linkedin.com/in/sujanpaudyal</a>
-                    </div>
-                    <div>
-                        <strong>Location:</strong>
-                        <span>Kathmandu / Koshi Province, Nepal</span>
-                    </div>
-                    <div>
-                        <span aria-hidden="true">🇳🇵</span> Nepali · English (fluent) · Hindi (conversational)
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer role="contentinfo">
-        <div>
-            <p>© 2026 Sujan Paudyal. Built with <span aria-hidden="true">⛰️</span> and clean code.</p>
-            <p>
-                <a href="#home">Home</a> ·
-                <a href="#projects">Projects</a> ·
-                <a href="#about">About</a> ·
-                <a href="#contact">Contact</a>
-            </p>
+        <div class="token-strip">
+          <p class="token-strip__label"><span aria-hidden="true">// </span>this site's tokens</p>
+          <ul class="token-strip__list">
+            <li><span class="token-swatch token-swatch--paper" aria-hidden="true"></span>paper</li>
+            <li><span class="token-swatch token-swatch--ink" aria-hidden="true"></span>ink</li>
+            <li><span class="token-swatch token-swatch--blue" aria-hidden="true"></span>blue</li>
+            <li><span class="token-swatch token-swatch--signal" aria-hidden="true"></span>signal</li>
+          </ul>
         </div>
-    </footer>
+      </div>
+      <ul class="site-footer__social">
+        <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:hello@alexrivera.dev">Email</a></li>
+      </ul>
+      <p class="site-footer__copyright">&copy; <span id="year">2026</span> Alex Rivera. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Script linked at the bottom for performance -->
-    <script src="script.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
