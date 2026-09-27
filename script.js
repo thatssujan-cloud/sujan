@@ -166,16 +166,43 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const text = "I Study the Ground Beneath What We Build.";
   const target = document.getElementById("typing-text");
+  
   let index = 0;
+  let isDeleting = false;
 
-  function typeWriter() {
-    if (index < text.length) {
-      target.textContent += text.charAt(index);
+  const typeSpeed = 65;      // Speed when typing out letters
+  const deleteSpeed = 35;    // Speed when deleting letters
+  const pauseEnd = 2000;     // Pause time (2s) when sentence is fully typed
+  const pauseStart = 500;    // Pause time before re-typing
+
+  function typeLoop() {
+    if (!isDeleting) {
+      // Typing forward
+      target.textContent = text.substring(0, index + 1);
       index++;
-      setTimeout(typeWriter, 65); // Speed in milliseconds per letter
+
+      if (index === text.length) {
+        // Sentence completed -> Pause, then start deleting
+        isDeleting = true;
+        setTimeout(typeLoop, pauseEnd);
+        return;
+      }
+      setTimeout(typeLoop, typeSpeed);
+    } else {
+      // Deleting backward
+      target.textContent = text.substring(0, index - 1);
+      index--;
+
+      if (index === 0) {
+        // Text completely deleted -> Pause, then start typing again
+        isDeleting = false;
+        setTimeout(typeLoop, pauseStart);
+        return;
+      }
+      setTimeout(typeLoop, deleteSpeed);
     }
   }
 
-  // Starts typing after a brief 300ms delay
-  setTimeout(typeWriter, 300);
+  // Start the continuous loop
+  setTimeout(typeLoop, pauseStart);
 });
