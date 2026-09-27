@@ -163,38 +163,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+function initTypewriter() {
   const text = "I Study the Ground Beneath What We Build.";
   const target = document.getElementById("typing-text");
-  
+
+  // Safety check: exit if element doesn't exist on page
+  if (!target) return;
+
   let index = 0;
   let isDeleting = false;
 
-  const typeSpeed = 65;      // Speed when typing out letters
-  const deleteSpeed = 35;    // Speed when deleting letters
-  const pauseEnd = 2000;     // Pause time (2s) when sentence is fully typed
-  const pauseStart = 500;    // Pause time before re-typing
+  const typeSpeed = 65;
+  const deleteSpeed = 35;
+  const pauseEnd = 2000;
+  const pauseStart = 500;
 
   function typeLoop() {
+    if (!document.getElementById("typing-text")) return;
+
     if (!isDeleting) {
-      // Typing forward
       target.textContent = text.substring(0, index + 1);
       index++;
 
       if (index === text.length) {
-        // Sentence completed -> Pause, then start deleting
         isDeleting = true;
         setTimeout(typeLoop, pauseEnd);
         return;
       }
       setTimeout(typeLoop, typeSpeed);
     } else {
-      // Deleting backward
       target.textContent = text.substring(0, index - 1);
       index--;
 
       if (index === 0) {
-        // Text completely deleted -> Pause, then start typing again
         isDeleting = false;
         setTimeout(typeLoop, pauseStart);
         return;
@@ -203,6 +204,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Start the continuous loop
+  target.textContent = "";
   setTimeout(typeLoop, pauseStart);
+}
+
+// Run on page load or immediate execution if ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTypewriter);
+} else {
+  initTypewriter();
+}
+
+// Restart animation when returning via browser back/forward buttons
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    initTypewriter();
+  }
 });
