@@ -1148,29 +1148,22 @@ h1 {
 /* ==========================================================================
    Typing Animation Component
    ========================================================================== */
-.typing-text {
-  font-family: var(--font-mono); /* Uses your Cascadia Code / Monospace variable */
+#typing-text {
+  font-family: inherit;
+  color: var(--ink);
+}
+
+.typing-cursor {
   display: inline-block;
-  overflow: hidden; /* Hides text as it reveals */
-  border-right: 3px solid var(--blueprint); /* Matches your blueprint accent color */
-  white-space: nowrap; /* Keeps text on a single line */
-  margin: 0;
-  width: 0; /* Starts hidden */
-  
-  /* 41 steps matching the total character count (including spaces and period) */
-  animation: 
-    typing 3.5s steps(41, end) forwards,
-    blink 0.75s step-end infinite;
+  width: 3px;
+  height: 1.1em;
+  background-color: var(--blueprint);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 0.75s infinite;
 }
 
-/* Typing keyframes */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* Cursor blink keyframes */
 @keyframes blink {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--blueprint); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
