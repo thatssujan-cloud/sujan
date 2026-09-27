@@ -162,3 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const text = "I Study the Ground Beneath What We Build.";
+  const target = document.getElementById("typing-text");
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      target.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 65); // Speed in milliseconds per letter
+    }
+  }
+
+  // Starts typing after a brief 300ms delay
+  setTimeout(typeWriter, 300);
+});
