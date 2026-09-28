@@ -166,7 +166,7 @@ main {
 
 section {
   padding: 5rem 0;
-  border-bottom: 1px dashed var(--line-strong);
+  /* border-bottom: 1px dashed var(--line-strong); */
 }
 
 .section-intro h2 {
@@ -215,6 +215,7 @@ h1 {
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   color: var(--ink);
+  font-family: 'Courier New', monospace;
 }
 
 .lead {
@@ -493,9 +494,31 @@ h1 {
   gap: 3rem;
 }
 
+.about-tagline {
+  font-style: italic;
+  color: var(--blueprint-dark);
+}
+
 .about-text p {
   margin-bottom: 1.1rem;
   color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 60ch;
+  text-align: justify;
+}
+
+.about-lede {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.accent-term {
+  color: var(--blueprint-dark);
+  font-weight: 600;
+}
+
+.accent-term--amber {
+  color: var(--amber);
 }
 
 .about-side {
@@ -799,6 +822,75 @@ h1 {
 .volunteer-list span {
   color: var(--ink-soft);
   font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 3rem;
+  color: var(--blueprint);
+  opacity: 0.15;
+  line-height: 0.8;
+  font-family: Georgia, serif;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blueprint);
+  box-shadow: 0 12px 28px rgba(47, 102, 144, 0.12);
+}
+
+.testimonial-content {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.testimonial-author {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.author-role {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -1143,4 +1235,7 @@ h1 {
   .timeline {
     margin-left: 0.15rem;
   }
+}
+.extra-bth{
+  margin-top: 1rem;
 }

@@ -162,3 +162,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+function initTypewriter() {
+  const text = "I Study the Ground Beneath What We Build.";
+  const target = document.getElementById("typing-text");
+
+  // Safety check: exit if element doesn't exist on page
+  if (!target) return;
+
+  let index = 0;
+  let isDeleting = false;
+
+  const typeSpeed = 65;
+  const deleteSpeed = 35;
+  const pauseEnd = 2000;
+  const pauseStart = 500;
+
+  function typeLoop() {
+    if (!document.getElementById("typing-text")) return;
+
+    if (!isDeleting) {
+      target.textContent = text.substring(0, index + 1);
+      index++;
+
+      if (index === text.length) {
+        isDeleting = true;
+        setTimeout(typeLoop, pauseEnd);
+        return;
+      }
+      setTimeout(typeLoop, typeSpeed);
+    } else {
+      target.textContent = text.substring(0, index - 1);
+      index--;
+
+      if (index === 0) {
+        isDeleting = false;
+        setTimeout(typeLoop, pauseStart);
+        return;
+      }
+      setTimeout(typeLoop, deleteSpeed);
+    }
+  }
+
+  target.textContent = "";
+  setTimeout(typeLoop, pauseStart);
+}
+
+// Run on page load or immediate execution if ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTypewriter);
+} else {
+  initTypewriter();
+}
+
+// Restart animation when returning via browser back/forward buttons
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    initTypewriter();
+  }
+});
