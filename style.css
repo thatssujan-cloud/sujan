@@ -44,6 +44,44 @@ header,
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Body Background and Text */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+/* Header / Navbar */
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Paragraphs & Muted Subtext */
+p, .lead, .about-tagline, .exp-org, .testimonial-text {
+  color: var(--text-muted);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .logo {
+  color: var(--text-main);
+}
+
+/* Navigation Links */
+.primary-nav a {
+  color: var(--text-main);
+}
+
+/* Cards (Projects, Testimonials, Experience, Contact) */
+.project-card, 
+.testimonial-card, 
+.contact-card, 
+.exp-card,
+.photo-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
 /* ==========================================================================
    Global Reset & CSS Variables
    ========================================================================== */
