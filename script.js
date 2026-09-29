@@ -88,6 +88,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Light & Dark Theme Toggle Logic
+const themeToggleBtn = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+// Function to detect system color scheme
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// Function to apply theme and update button icon
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  if (themeIcon) {
+    themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+}
+
+// Initialize theme on page load
+const savedTheme = localStorage.getItem('theme') || getSystemTheme();
+applyTheme(savedTheme);
+
+// Toggle theme on button click
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+  });
+}
+
+// Listen for OS system theme preference changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('theme')) {
+    applyTheme(e.matches ? 'dark' : 'light');
+  }
+});
+  
   /* ------------------------------------------------------------------------
      5. Field Work Gallery Lightbox
      ------------------------------------------------------------------------ */
