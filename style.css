@@ -146,32 +146,43 @@ a:hover { color: var(--neon-bright); text-shadow: var(--glow-line); }
       circle at 82% 68%,
       transparent 0 58px,
       rgba(34, 211, 238, 0.045) 58px 60px);
+  /* GPU-composited transform pulse only — no per-frame repaint of the
+     full-screen gradient (keeps the particle canvas at 60fps) */
+  will-change: transform;
   animation: topoPulse 14s ease-in-out infinite alternate;
 }
 html[data-theme="light"] .topo-overlay { opacity: 0.7; }
 
 @keyframes topoPulse {
-  from { transform: scale(1); opacity: 0.35; }
-  to   { transform: scale(1.06); opacity: 0.6; }
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
 }
 
 .scanline {
   position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+/* The drifting band is a child element animated with translate3d so the
+   compositor handles it — animating background-position on a fixed
+   full-viewport layer forces a costly whole-screen repaint every frame. */
+.scanline::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: -240px; height: 240px;
   background: linear-gradient(to bottom,
       transparent 0%,
       rgba(16, 224, 168, 0.035) 48%,
       rgba(34, 211, 238, 0.07) 50%,
       rgba(16, 224, 168, 0.035) 52%,
       transparent 100%);
-  background-size: 100% 240px;
+  will-change: transform;
   animation: scanDrift 9s linear infinite;
-  mix-blend-mode: screen;
 }
 html[data-theme="light"] .scanline { opacity: 0.35; mix-blend-mode: multiply; }
 
 @keyframes scanDrift {
-  from { background-position: 0 -240px; }
-  to   { background-position: 0 100vh; }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, calc(100vh + 240px), 0); }
 }
 
 /* HUD corner crosshairs */
