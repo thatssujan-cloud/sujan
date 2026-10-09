@@ -82,11 +82,13 @@
     }
 
     var LINK_DIST = 128, MOUSE_DIST = 170;
+    var LINK_D2 = LINK_DIST * LINK_DIST;
 
-    function step(t) {
+    function step() {
       ctx.clearRect(0, 0, W, H);
       var i, j, p, q, dx, dy, d2;
 
+      /* --- physics pass (no drawing) --- */
       for (i = 0; i < particles.length; i++) {
         p = particles[i];
         p.x += p.vx; p.y += p.vy; p.pulse += 0.015;
@@ -97,39 +99,71 @@
         dx = p.x - mouse.x; dy = p.y - mouse.y;
         d2 = dx * dx + dy * dy;
         if (d2 < MOUSE_DIST * MOUSE_DIST && d2 > 0.01) {
-          var f = (1 - Math.sqrt(d2) / MOUSE_DIST) * 0.35;
-          var inv = 1 / Math.sqrt(d2);
-          p.x += dx * inv * f; p.y += dy * inv * f;
+          var dist = Math.sqrt(d2);
+          var f = (1 - dist / MOUSE_DIST) * 0.35;
+          p.x += (dx / dist) * f; p.y += (dy / dist) * f;
         }
       }
 
-      // proximity links (network nodes / fracture lines)
+      /* --- proximity links: batched by strata color to minimize
+             per-segment strokeStyle churn & path overhead (60fps).
+             Two alpha tiers per color: near (<0.5D) and mid (<D). --- */
       ctx.lineWidth = 1;
+      var NEAR_D2 = LINK_D2 * 0.25;
+      for (var s = 0; s < STRATA.length; s++) {
+        var col = STRATA[s].c;
+        var nearPath = new Path2D(), midPath = new Path2D(), hasNear = false, hasMid = false;
+        for (i = 0; i < particles.length; i++) {
+          p = particles[i];
+          if (p.c !== col) continue;
+          for (j = i + 1; j < particles.length; j++) {
+            q = particles[j];
+            if (q.c !== col) continue;
+            dx = p.x - q.x; dy = p.y - q.y;
+            d2 = dx * dx + dy * dy;
+            if (d2 < NEAR_D2) {
+              nearPath.moveTo(p.x, p.y); nearPath.lineTo(q.x, q.y); hasNear = true;
+            } else if (d2 < LINK_D2) {
+              midPath.moveTo(p.x, p.y); midPath.lineTo(q.x, q.y); hasMid = true;
+            }
+          }
+        }
+        if (hasMid)  { ctx.strokeStyle = 'rgba(' + col + ',0.10)'; ctx.stroke(midPath); }
+        if (hasNear) { ctx.strokeStyle = 'rgba(' + col + ',0.24)'; ctx.stroke(nearPath); }
+      }
+
+      // cross-strata links (neon <-> cyan only), single faint batch
+      var crossPath = new Path2D(), crossDrew = false;
       for (i = 0; i < particles.length; i++) {
         p = particles[i];
+        if (p.c === '148,163,184') continue;
         for (j = i + 1; j < particles.length; j++) {
           q = particles[j];
+          if (q.c === p.c || q.c === '148,163,184') continue;
           dx = p.x - q.x; dy = p.y - q.y;
           d2 = dx * dx + dy * dy;
-          if (d2 < LINK_DIST * LINK_DIST) {
-            var a = (1 - Math.sqrt(d2) / LINK_DIST) * 0.28;
-            ctx.strokeStyle = 'rgba(' + p.c + ',' + a.toFixed(3) + ')';
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.stroke();
+          if (d2 < LINK_D2) {
+            crossPath.moveTo(p.x, p.y); crossPath.lineTo(q.x, q.y); crossDrew = true;
           }
         }
       }
+      if (crossDrew) { ctx.strokeStyle = 'rgba(34,211,238,0.09)'; ctx.stroke(crossPath); }
 
-      // nodes
-      for (i = 0; i < particles.length; i++) {
-        p = particles[i];
-        var glow = 0.5 + Math.sin(p.pulse) * 0.28;
-        ctx.fillStyle = 'rgba(' + p.c + ',' + glow.toFixed(3) + ')';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+      /* --- nodes: arcs drawn in one path per color, alpha averaged --- */
+      for (var n = 0; n < STRATA.length; n++) {
+        var nc = STRATA[n].c;
+        var nodePath = new Path2D(), any = false;
+        for (i = 0; i < particles.length; i++) {
+          p = particles[i];
+          if (p.c !== nc) continue;
+          nodePath.moveTo(p.x + p.r, p.y);
+          nodePath.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          any = true;
+        }
+        if (any) {
+          ctx.fillStyle = 'rgba(' + nc + ',0.62)';
+          ctx.fill(nodePath);
+        }
       }
 
       fps.tick();
